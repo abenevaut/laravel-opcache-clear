@@ -1,12 +1,12 @@
 <?php
 
-namespace MicheleCurletta\LaravelOPCacheClear;
+namespace MicheleCurletta\LaravelOpcacheClear;
 
 use Illuminate\Console\Command;
 use GuzzleHttp\Client;
 use Crypt;
 
-class OPCacheClearCommand extends Command
+class OpcacheClearCommand extends Command
 {
     /**
      * The name and signature of the console command.

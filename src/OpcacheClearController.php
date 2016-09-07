@@ -1,13 +1,13 @@
 <?php
 
-namespace MicheleCurletta\LaravelOPCacheClear;
+namespace MicheleCurletta\LaravelOpcacheClear;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Crypt;
 use Illuminate\Contracts\Encryption\DecryptException;
  
-class OPCacheClearController extends Controller
+class OpcacheClearController extends Controller
 {
  
     protected function opcacheClear(Request $request)
