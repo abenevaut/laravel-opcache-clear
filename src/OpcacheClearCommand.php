@@ -41,6 +41,7 @@ class OpcacheClearCommand extends Command
     {
         $client = new Client;
         $request = $client->createRequest('GET', config('app.url', 'http://localhost'));
+        $request->setPath('/opcache-clear');
 
         $originalToken = config('app.key');
 
