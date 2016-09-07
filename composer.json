@@ -14,7 +14,6 @@
             "email": "michele.curletta@icloud.com"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "MicheleCurletta\\LaravelOpcacheClear\\": "src"
