@@ -4,6 +4,7 @@
     "type": "package",
     "require": {
         "php": "^7.0",
+        "laravel/laravel": "5.*",
         "guzzlehttp/guzzle": "5.3.*"
     },
     "license": "MIT",
@@ -16,7 +17,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "MicheleCurletta\\LaravelOpcacheClear\\": "src"
+            "MicheleCurletta\\LaravelOPCacheClear\\": "src"
         }
     }
 }

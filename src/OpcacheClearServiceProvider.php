@@ -1,10 +1,10 @@
 <?php
 
-namespace MicheleCurletta\LaravelOpcacheClear;
+namespace MicheleCurletta\LaravelOPCacheClear;
 
 use Illuminate\Support\ServiceProvider;
 
-class OpcacheClearServiceProvider extends ServiceProvider
+class OPCacheClearServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -24,9 +24,9 @@ class OpcacheClearServiceProvider extends ServiceProvider
     public function register()
     {
         include __DIR__.'/routes.php';
-        $this->app->make('MicheleCurletta\LaravelOpcacheClear\OpcacheClearController');
+        $this->app->make('MicheleCurletta\LaravelOPCacheClear\OPCacheClearController');
 
-        $this->app->bind('command.opcache:clear', OpcacheClearCommand::class);
+        $this->app->bind('command.opcache:clear', OPCacheClearCommand::class);
 
         $this->commands([
             'command.opcache:clear',
