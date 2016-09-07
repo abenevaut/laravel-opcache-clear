@@ -4,7 +4,7 @@
     "type": "package",
     "require": {
         "php": "^7.0",
-        "laravel/laravel": "^5.*",
+        "laravel/laravel": "^5.0",
         "guzzlehttp/guzzle": "5.3.*"
     },
     "license": "MIT",
