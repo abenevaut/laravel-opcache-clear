@@ -40,7 +40,7 @@ class OPCacheClearCommand extends Command
     public function handle()
     {
         $client = new Client;
-        $request = $client->createRequest('GET', 'http://localhost/opcache-clear');
+        $request = $client->createRequest('GET', config('app.url', 'http://localhost'));
 
         $originalToken = config('app.key').config('app.url');
 

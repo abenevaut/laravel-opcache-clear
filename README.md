@@ -30,6 +30,12 @@ You must also install this service provider.
 ];
 ```
 
+You must make sure that you've setted the right application url into config/app.php
+
+```php
+// config/app.php
+ 'url' => env('APP_URL', 'http://my-app-url'),
+```
 ### Usage
 
 Once you have installed the package, you can run the following command:
