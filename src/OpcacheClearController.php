@@ -12,7 +12,7 @@ class OpcacheClearController extends Controller
  
     protected function opcacheClear(Request $request)
     {   
-        $original = config('app.key').config('app.url');
+        $original = config('app.key');
 
         $result = false;
 

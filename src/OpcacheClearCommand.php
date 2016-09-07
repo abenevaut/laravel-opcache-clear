@@ -42,7 +42,7 @@ class OpcacheClearCommand extends Command
         $client = new Client;
         $request = $client->createRequest('GET', config('app.url', 'http://localhost'));
 
-        $originalToken = config('app.key').config('app.url');
+        $originalToken = config('app.key');
 
         $encryptedToken = Crypt::encrypt($originalToken);
 
