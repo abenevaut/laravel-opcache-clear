@@ -1,0 +1,18 @@
+{
+    "name": "michelecurletta/laravel-opcache-clear",
+    "description": "This package allows you to clear OpCache when running PHP in FPM mode.",
+    "type": "package",
+    "require": {
+        "php": "^7.0",
+        "laravel/laravel": "^5.3",
+        "guzzlehttp/guzzle": "5.3.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michele Giovanni Curletta",
+            "email": "michele.curletta@icloud.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
