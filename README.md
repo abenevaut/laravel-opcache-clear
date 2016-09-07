@@ -1,88 +1,44 @@
-# Project Title
+# LaravelOpcacheClear
 
-One Paragraph of project description goes here
+This Laravel 5 package allows you to clear OpCache, solving a common problem related to cache invalidation during atomic deployments (also called "zero downtime deploy").
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions allows you to install the package into an existing Laravel app.
 
 ### Prerequisities
 
-What things you need to install the software and how to install them
+Laravel 5 up&running installation.
 
-```
-Give examples
-```
 
-### Installing
+### Installation
 
-A step by step series of examples that tell you have to get a development env running
+You can install this package via Composer using:
 
-Stay what the step will be
-
-```
-Give the example
+```bash
+composer require michelecurletta/laravel-opcache-clear
 ```
 
-And repeat
+You must also install this service provider.
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+```php
+// config/app.php
+'providers' => [
+    ...
+    MicheleCurletta\LaravelOpcacheClear\OpcacheClearServiceProvider::class,
+    ...
+];
 ```
 
-### And coding style tests
+### Usage
 
-Explain what these tests test and why
+Once you have installed the package, you can run the following command:
 
+```bash
+php artisan opcache:clear
 ```
-Give an example
-```
+All done! Your OpCache is resetted!
 
-## Deployment
+### Suggestion
 
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* Dropwizard - Bla bla bla
-* Maven - Maybe
-* Atom - ergaerga
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
-
+Run this command during deployment process in order to automate the cleaning process before you app became active!
