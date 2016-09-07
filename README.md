@@ -25,7 +25,7 @@ You must also install this service provider.
 // config/app.php
 'providers' => [
     ...
-    MicheleCurletta\LaravelOpcacheClear\OPCacheClearServiceProvider::class,
+    MicheleCurletta\LaravelOPCacheClear\OPCacheClearServiceProvider::class,
     ...
 ];
 ```
