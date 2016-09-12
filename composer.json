@@ -7,6 +7,14 @@
         "laravel/framework": "5.*",
         "guzzlehttp/guzzle": "5.3.*"
     },
+    "keywords":
+        [
+            "laravel",
+            "cache",
+            "opcache",
+            "reset",
+            "clear"
+        ],
     "license": "MIT",
     "authors": [
         {
