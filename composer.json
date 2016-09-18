@@ -3,7 +3,7 @@
     "description": "This package allows you to clear OPcache when running PHP in FPM mode.",
     "type": "package",
     "require": {
-        "php": "^7.0",
+        "php": ">=5.5.9",
         "laravel/framework": "5.*",
         "guzzlehttp/guzzle": "5.3.*"
     },
