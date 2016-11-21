@@ -1,8 +1,8 @@
 <?php namespace CVEPDB\Opcache\Clear\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Contracts\Encryption\DecryptException;
-use CVEPDB\Opcache\Clear\Http\Request\OpcacheClearFormRequest;
 
 /**
  * Class OpcacheClearController
@@ -12,11 +12,11 @@ class OpcacheClearController extends Controller
 {
 
 	/**
-	 * @param OpcacheClearFormRequest $request
+	 * @param Request $request
 	 *
 	 * @return \Illuminate\Http\JsonResponse
 	 */
-	protected function opcacheClear(OpcacheClearFormRequest $request)
+	protected function opcacheClear(Request $request)
 	{
 		$result = false;
 		$decrypted = null;
@@ -25,17 +25,25 @@ class OpcacheClearController extends Controller
 		try
 		{
 			$decrypted = \Crypt::decrypt($request->get('token'));
+
+			if (($decrypted === $original) && \opcache_reset())
+			{
+				$result = true;
+			}
 		}
 		catch (DecryptException $e)
 		{
+			$result = false;
+
+			\Log::error($e->getMessage());
+		}
+		catch (\Exception $e)
+		{
+			$result = false;
+
 			\Log::error($e->getMessage());
 		}
 
-		if (($decrypted == $original) && opcache_reset())
-		{
-			$result = true;
-		}
-
-		return response()->json(["result" => $result]);
+		return response()->json(['result' => $result]);
 	}
 }

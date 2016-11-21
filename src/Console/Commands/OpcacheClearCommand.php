@@ -1,7 +1,8 @@
 <?php namespace CVEPDB\Opcache\Clear\Console\Commands;
 
-use Illuminate\Console\Command;
 use GuzzleHttp\Client;
+use Illuminate\Console\Command;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 /**
  * Class OpcacheClearCommand
@@ -31,22 +32,44 @@ class OpcacheClearCommand extends Command
 	 */
 	public function handle()
 	{
-		$client = new Client;
-		$originalToken = config('app.key');
-		$encryptedToken = \Crypt::encrypt($originalToken);
+		$debug = false;
 
-		$request = $client->createRequest('DELETE', config('app.url', 'http://localhost'));
-		$request->setPath('/opcache-clear');
-		$request->getQuery()->set('token', $encryptedToken);
-		$response = $client->send($request);
+		try
+		{
+			$encryptedToken = \Crypt::encrypt(config('app.key'));
 
-		if (($response->json()['result']))
-		{
-			$this->line('So far, so good.');
+			$client = new Client(['debug' => $debug, 'timeout' => 60]);
+
+			$response = $client->get(
+				config('app.url', 'http://localhost/') . 'opcache-clear',
+				[
+					'debug' => $debug,
+					'query' => [
+						'token' => $encryptedToken
+					]
+				]
+			);
+
+			$json = \GuzzleHttp\json_decode($response->getBody()->getContents());
+
+			if ($json->result)
+			{
+				$this->line('So far, so good.');
+
+				return 1;
+			}
 		}
-		else
+		catch (DecryptException $e)
 		{
-			$this->line('Ooops!');
+			\Log::error($e->getMessage());
 		}
+		catch (\Exception $e)
+		{
+			\Log::error($e->getMessage());
+		}
+
+		$this->error('Ooops!');
+
+		return 0;
 	}
 }

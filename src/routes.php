@@ -1,5 +1,5 @@
 <?php
 
-Route::group(['namespace' => 'CVEPDB\Opcache\Clear\Http\Controllers'], function() {
-	Route::delete('opcache-clear', 'OpcacheClearController@opcacheClear');
+Route::group(['middleware' => 'web', 'namespace' => 'CVEPDB\Opcache\Clear\Http\Controllers'], function() {
+	Route::get('opcache-clear', 'OpcacheClearController@opcacheClear');
 });
