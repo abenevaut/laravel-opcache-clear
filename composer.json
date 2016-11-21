@@ -1,11 +1,11 @@
 {
-    "name": "michelecurletta/laravel-opcache-clear",
+    "name": "cvepdb/laravel-opcache-clear",
     "description": "This Laravel package allows you to clear the OPcache of a PHP application running in FPM mode with ease.",
     "type": "package",
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.*",
-        "guzzlehttp/guzzle": "5.3.*"
+        "guzzlehttp/guzzle": "^6.0"
     },
     "keywords":
         [
@@ -23,12 +23,16 @@
         {
             "name": "Michele Giovanni Curletta",
             "email": "michele.curletta@icloud.com"
+        },
+        {
+            "name": "Antoine Benevaut",
+            "email": "antoine@cvepdb.fr"
         }
     ],
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "MicheleCurletta\\LaravelOpcacheClear\\": "src"
+            "CVEPDB\\Opcache\\Clear\\": "src"
         }
     }
 }
