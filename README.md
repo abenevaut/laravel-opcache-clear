@@ -16,7 +16,7 @@ Laravel 5 up&running installation.
 You can install this package via Composer using:
 
 ```bash
-composer require cvepdb/laravel-opcache-clear
+composer require abenevaut/laravel-opcache-clear
 ```
 
 You must also install this service provider.
@@ -25,7 +25,7 @@ You must also install this service provider.
 // config/app.php
 'providers' => [
     ...
-    CVEPDB\Opcache\Clear\OpcacheClearServiceProvider::class,
+    ABENEVAUT\Opcache\Clear\OpcacheClearServiceProvider::class,
     ...
 ];
 ```

@@ -1,13 +1,9 @@
-<?php namespace CVEPDB\Opcache\Clear\Console\Commands;
+<?php namespace ABENEVAUT\Opcache\Clear\Console\Commands;
 
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Encryption\DecryptException;
 
-/**
- * Class OpcacheClearCommand
- * @package CVEPDB\Opcache\Clear\Console\Commands
- */
 class OpcacheClearCommand extends Command
 {
 
