@@ -41,7 +41,7 @@ class OpcacheClearCommand extends Command
 			$client = new Client(['debug' => $debug, 'timeout' => 60]);
 
 			$response = $client->get(
-				rtrim(config('app.url', 'http://localhost/'), '/') . '/opcache-clear',
+				config('app.url', 'http://localhost/') . 'opcache-clear',
 				[
 					'debug' => $debug,
 					'query' => [
