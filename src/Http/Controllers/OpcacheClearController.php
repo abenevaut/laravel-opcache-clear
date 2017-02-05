@@ -1,9 +1,13 @@
-<?php namespace ABENEVAUT\Opcache\Clear\Http\Controllers;
+<?php namespace CVEPDB\Opcache\Clear\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Contracts\Encryption\DecryptException;
 
+/**
+ * Class OpcacheClearController
+ * @package CVEPDB\Opcache\Clear\Http\Controllers
+ */
 class OpcacheClearController extends Controller
 {
 

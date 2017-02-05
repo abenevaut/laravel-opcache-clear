@@ -1,5 +1,5 @@
 {
-    "name": "abenevaut/laravel-opcache-clear",
+    "name": "cvepdb/laravel-opcache-clear",
     "description": "This Laravel package allows you to clear the OPcache of a PHP application running in FPM mode with ease.",
     "type": "package",
     "require": {
@@ -26,13 +26,13 @@
         },
         {
             "name": "Antoine Benevaut",
-            "email": "antoine@benevaut.fr"
+            "email": "antoine@cvepdb.fr"
         }
     ],
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "ABENEVAUT\\Opcache\\Clear\\": "src"
+            "CVEPDB\\Opcache\\Clear\\": "src"
         }
     }
 }

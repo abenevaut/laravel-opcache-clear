@@ -1,7 +1,11 @@
-<?php namespace ABENEVAUT\Opcache\Clear\App\Providers;
+<?php namespace CVEPDB\Opcache\Clear\App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class OpcacheClearServiceProvider
+ * @package CVEPDB\Opcache\Clear\App\Providers
+ */
 class OpcacheClearServiceProvider extends ServiceProvider
 {
 
@@ -15,12 +19,12 @@ class OpcacheClearServiceProvider extends ServiceProvider
 		include __DIR__ . '/../../routes.php';
 
 		$this->app->make(
-			\ABENEVAUT\Opcache\Clear\Http\Controllers\OpcacheClearController::class
+			\CVEPDB\Opcache\Clear\Http\Controllers\OpcacheClearController::class
 		);
 
 		$this->app->bind(
 			'command.opcache:clear',
-			\ABENEVAUT\Opcache\Clear\Console\Commands\OpcacheClearCommand::class
+			\CVEPDB\Opcache\Clear\Console\Commands\OpcacheClearCommand::class
 		);
 
 		$this->commands([
