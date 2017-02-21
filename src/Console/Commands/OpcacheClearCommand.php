@@ -54,7 +54,7 @@ class OpcacheClearCommand extends Command
 			{
 				$this->line('OpCache cleared');
 
-				return 1;
+				return 0;
 			}
 		}
 		catch (DecryptException $e)
@@ -68,6 +68,6 @@ class OpcacheClearCommand extends Command
 
 		$this->error('Something went wrong!');
 
-		return 0;
+		return 1;
 	}
 }
