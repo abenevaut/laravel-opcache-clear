@@ -3,6 +3,8 @@
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Log;
 
 class OpcacheClearCommand extends Command
 {
@@ -32,7 +34,7 @@ class OpcacheClearCommand extends Command
 
 		try
 		{
-			$encryptedToken = \Crypt::encrypt(config('app.key'));
+			$encryptedToken = Crypt::encrypt(config('app.key'));
 
 			$client = new Client(['debug' => $debug, 'timeout' => 60]);
 
@@ -50,21 +52,21 @@ class OpcacheClearCommand extends Command
 
 			if ($json->result)
 			{
-				$this->line('So far, so good.');
+				$this->line('OpCache cleared');
 
 				return 1;
 			}
 		}
 		catch (DecryptException $e)
 		{
-			\Log::error($e->getMessage());
+			Log::error($e->getMessage());
 		}
 		catch (\Exception $e)
 		{
-			\Log::error($e->getMessage());
+			Log::error($e->getMessage());
 		}
 
-		$this->error('Ooops!');
+		$this->error('Something went wrong!');
 
 		return 0;
 	}

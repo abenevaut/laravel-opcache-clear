@@ -4,8 +4,11 @@
     "type": "package",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.*",
         "guzzlehttp/guzzle": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.0.*",
+        "laravel/framework": "5.4.*"
     },
     "keywords":
         [
@@ -18,21 +21,22 @@
             "fpm",
             "php-fpm"
         ],
-    "license": "MIT",
+    "license": "GPL-3",
     "authors": [
-        {
-            "name": "Michele Giovanni Curletta",
-            "email": "michele.curletta@icloud.com"
-        },
         {
             "name": "Antoine Benevaut",
             "email": "antoine@benevaut.fr"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "ABENEVAUT\\Opcache\\Clear\\": "src"
         }
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit"
+        ]
     }
 }

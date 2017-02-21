@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/abenevaut/laravel-opcache-clear.svg?branch=master)](https://travis-ci.org/abenevaut/laravel-opcache-clear)
+
 # Clear OPcache with ease
 
 This Laravel 5 package allows you to clear OPcache, solving a common problem related to cache invalidation during atomic deployments (also called "zero downtime deploy").
@@ -8,7 +10,7 @@ These instructions allows you to install the package into an existing Laravel ap
 
 ### Prerequisities
 
-Laravel 5 up&running installation.
+Laravel 5.4 up&running installation.
 
 
 ### Installation
@@ -25,7 +27,7 @@ You must also install this service provider.
 // config/app.php
 'providers' => [
     ...
-    ABENEVAUT\Opcache\Clear\OpcacheClearServiceProvider::class,
+    ABENEVAUT\Opcache\Clear\App\Providers\OpcacheClearServiceProvider::class,
     ...
 ];
 ```

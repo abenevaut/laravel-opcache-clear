@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Log;
 
 class OpcacheClearController extends Controller
 {
@@ -20,7 +22,7 @@ class OpcacheClearController extends Controller
 
 		try
 		{
-			$decrypted = \Crypt::decrypt($request->get('token'));
+			$decrypted = Crypt::decrypt($request->get('token'));
 
 			if (($decrypted === $original) && \opcache_reset())
 			{
@@ -31,13 +33,13 @@ class OpcacheClearController extends Controller
 		{
 			$result = false;
 
-			\Log::error($e->getMessage());
+			Log::error($e->getMessage());
 		}
 		catch (\Exception $e)
 		{
 			$result = false;
 
-			\Log::error($e->getMessage());
+			Log::error($e->getMessage());
 		}
 
 		return response()->json(['result' => $result]);
