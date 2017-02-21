@@ -50,3 +50,7 @@ All done! Your OPcache is resetted!
 ### Suggestion
 
 Run this command during deployment process in order to automate the cleaning process before you app become active!
+
+# Credits to main author
+
+Original package : [michelecurletta/laravel-opcache-clear](https://github.com/michelecurletta/laravel-opcache-clear)
