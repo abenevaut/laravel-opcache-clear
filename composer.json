@@ -28,7 +28,6 @@
             "email": "antoine@benevaut.fr"
         }
     ],
-    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "ABENEVAUT\\Opcache\\Clear\\": "src"
